@@ -2,43 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>docsify-demo</title>
+    <title>Document</title>
+    <!--IE=edge告诉IE使用最新的引擎渲染网页，chrome=1则可以激活Chrome Frame.-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="description" content="Description">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--让搜索引擎搜索到你的网页-->
+    <meta name="keywords" content="网页关键字|Document">
+    <meta name="description" content="网页描述文字|Document">
+    <!--适配移动端-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+    <!--引入css样式；(vue/buble/dark/pure/dolphin)-->
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-<!--        <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/buble.css">-->
-<!--        <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/dark.css">-->
-<!--        <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/pure.css">-->
-<!--        <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/dolphin.css">-->
-<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css">-->
-
-    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">-->
-    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">-->
-
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css">-->
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">-->
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">-->
+    <script src="index.js"></script>
 </head>
 <body>
 <div id="app"></div>  <!-- docsify-edit-on-github -->
-<script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+<!--<script src="//unpkg.com/docsify-edit-on-github/index.js"></script>-->
 <script>
     window.$docsify = {
-        name: '<span>docsify</span>',//文档标题，会显示在侧边栏顶部
-        repo: 'https://github.com/Snailclimb/JavaGuide-Interview',//GitHub 上的仓库地址，会在页面右上角渲染一个 GitHub 角标 保存后，就可以在浏览器上查看到效果
-        maxLevel: 5,//最大支持渲染的标题层级
-        subMaxLevel: 2, //自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能。
+        //文档标题，会显示在侧边栏顶部
+        name: '<span>docsify</span>',
+        //GitHub 上的仓库地址，会在页面右上角渲染一个 GitHub 角标 保存后，就可以在浏览器上查看到效果
+        repo: 'https://github.com/Snailclimb/JavaGuide-Interview',
+        //最大支持渲染的标题层级
+        maxLevel: 5,
+        //自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能。
+        subMaxLevel: 2,
         homepage: 'README.md',
-        coverpage: true, //启用封面页。开启后是加载 _coverpage.md 文件，也可以自定义文件名。
-        // logo: '/_media/icon.svg', //在侧边栏中出现的网站图标，你可以使用CSS来更改大小
-        loadSidebar: true,//开启侧边栏选项
-        auto2top: true,//切换页面后是否自动跳转到页面顶部
+        //启用封面页。开启后是加载 _coverpage.md 文件，也可以自定义文件名。
+        coverpage: true,
+        //在侧边栏中出现的网站图标，你可以使用CSS来更改大小
+        // logo: '/_media/icon.svg',
+        //开启侧边栏选项
+        loadSidebar: true,
+        //切换页面后是否自动跳转到页面顶部
+        auto2top: true,
         //全文搜索
         search: {
-            maxAge: 86400000,//过期时间，单位毫秒，默认一天
+            //过期时间，单位毫秒，默认一天
+            maxAge: 86400000,
             paths: 'auto',
             placeholder: '搜索',
             noData: '找不到结果',
-            depth: 3,//搜索标题的最大程级,1-6
+            //搜索标题的最大程级,1-6
+            depth: 3,
         },
         count: {
             countable: true,
@@ -48,10 +58,11 @@
         },
         loadNavbar: true,
         alias: {
-            '/.*/_navbar.md': '/_navbar.md'//防止意外回退
+            //防止意外回退
+            '/.*/_navbar.md': '/_navbar.md'
         },
         plugins: [
-            function(hook, vm) {
+            function (hook, vm) {
 
                 var footer = [
                     '<hr/>',
@@ -61,17 +72,17 @@
                     '</footer>'
                 ].join('');
 
-                hook.init(function() {
+                hook.init(function () {
                     // 初始化完成后调用，只调用一次，没有参数。
                 });
 
-                hook.beforeEach(function(content) {
+                hook.beforeEach(function (content) {
                     // 每次开始解析 Markdown 内容时调用
                     // ...
                     return content;
                 });
 
-                hook.afterEach(function(html) {
+                hook.afterEach(function (html) {
                     // 解析成 html 后调用。
                     // beforeEach 和 afterEach 支持处理异步逻辑
                     // ...
@@ -79,16 +90,16 @@
                     return html + footer;
                 });
 
-                hook.doneEach(function() {
+                hook.doneEach(function () {
                     // 每次路由切换时数据全部加载完成后调用，没有参数。
                     // ...
                 });
 
-                hook.mounted(function() {
+                hook.mounted(function () {
                     // 初始化并第一次加载完成数据后调用，只触发一次，没有参数。
                 });
 
-                hook.ready(function() {
+                hook.ready(function () {
                     // 初始化并第一次加载完成数据后调用，没有参数。
                 });
             }
@@ -104,6 +115,10 @@
     }
 </script>
 
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+
+
+
 <!--代码高亮-->
 <script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
 <script src="//unpkg.com/prismjs/components/prism-java.js"></script>
@@ -113,7 +128,7 @@
 <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
 
 <!-- 复制代码到剪贴板 -->
-<script src="//unpkg.com/docsify-copy-code"></script>
+<!--<script src="//unpkg.com/docsify-copy-code"></script>-->
 
 <!-- 图片缩放 -->
 <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
@@ -122,7 +137,12 @@
 <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
 
 <!--emoji表情-->
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+<!--<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>-->
 
 </body>
+
+<script>
+
+
+</script>
 </html>
