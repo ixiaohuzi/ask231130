@@ -5,9 +5,10 @@
     <title>Document</title>
     <!--IE=edge告诉IE使用最新的引擎渲染网页，chrome=1则可以激活Chrome Frame.-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <!--让搜索引擎搜索到你的网页-->
-    <meta name="keywords" content="网页关键字|Document">
+    <!--网站描述&关键字&作者-->
     <meta name="description" content="网页描述文字|Document">
+    <meta name="keywords" content="网页关键字|Document">
+    <meta name="author" content="小胡">
     <!--适配移动端-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
@@ -16,6 +17,7 @@
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css">-->
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">-->
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">-->
+
 </head>
 <body>
 <div id="app"></div>
@@ -24,8 +26,15 @@
         name: '<span>Document</span>',
         repo: 'http://www.baidu.com',
         coverpage: true,
-        onlyCover: true,
+        //onlyCover: true,
+
+        loadSidebar: true,
+
+        // 页脚信息插件
+        loadFooter: true,
+        loadFooter: '_footer.md'
     }
+
 </script>
 
 <!-- Docsify v4 -->
@@ -37,8 +46,10 @@
 <script src="//unpkg.com/prismjs/components/prism-sql.js"></script>
 
 <!--emoji表情-->
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+<!--<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>-->
 
+<!-- 页脚信息 -->
+<script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 </body>
 </html>
 
