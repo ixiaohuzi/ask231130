@@ -1,0 +1,24 @@
+{
+  "name": "ask231130",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ixiaohuzi/ask231130.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ixiaohuzi/ask231130/issues"
+  },
+  "homepage": "https://github.com/ixiaohuzi/ask231130#readme",
+  "devDependencies": {
+    "vuepress": "^1.9.10"
+  }
+}
